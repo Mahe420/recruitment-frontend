@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="title">
+        <h1 class="mat-display-2">Welcome to TechFloat</h1>
+    </div>
+    <div class="body">
+        <mat-card>
+            <mat-card-header fxLayout="column" fxLayoutAlign="center center">
+                <mat-card-title>LOGIN</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <form [formGroup]="loginForm">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input formControlName="username" matInput>
+                        <mat-error *ngIf="loginForm.get('username').errors?.required">
+                            Required User Name
+                         </mat-error>
+                    </mat-form-field><br>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input [type]="hide ? 'text':'password'" formControlName="password" matInput>
+                        <button mat-icon-button matSuffix (click)="hide=!hide" [attr.aria-label]="'Hide password'">
+                            <mat-icon>{{hide ? 'visibility' :'visibility_off'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="loginForm.get('password').errors?.required">
+                            Required Last Name
+                         </mat-error>
+                    </mat-form-field>
+                </form>
+
+                <mat-card-actions fxLayout="row" fxLayoutAlign="center center">
+                    <button type="button" mat-raised-button color="primary" (click)="submit()">SUBMIT</button>
+                    <button type="button" mat-raised-button color="warn" (click)="newUser()">NEW USER</button>
+                </mat-card-actions>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

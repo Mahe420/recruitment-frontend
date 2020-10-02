@@ -1,0 +1,45 @@
+.container {
+  display: grid;
+  height: 100%;
+  grid-template-rows: 20% auto;
+  grid-template-areas: "title""body";
+  background: #00d2ff;
+  background: -webkit-linear-gradient(to top, #928DAB, #00d2ff);
+  background: linear-gradient(to top, #928DAB, #00d2ff);
+
+}
+
+.title {
+  // background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-display-2 {
+  margin: 0px;
+}
+
+.body {
+  // background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-card {
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.mat-card-content {
+  margin: 0px
+}
+
+.mat-card-actions {
+  margin-bottom: 10px;
+}
