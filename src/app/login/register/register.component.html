@@ -45,9 +45,12 @@
             <div>
                 <mat-label>Email</mat-label>
                 <mat-form-field appearance="standard">
-                    <input matInput formControlName="email">
+                    <input matInput formControlName="email" email >
                     <mat-error *ngIf="registerForm.get('email').errors?.required">
                         Required email id
+                     </mat-error>
+                     <mat-error *ngIf="registerForm.get('email').errors?.pattern"> 
+                        Email not valid.
                      </mat-error>
                 </mat-form-field>
                 <mat-label class="spacer">Phone Number</mat-label>
@@ -55,6 +58,9 @@
                     <input matInput  formControlName="phoneNumber">
                     <mat-error *ngIf="registerForm.get('phoneNumber').errors?.required">
                         Required phone number
+                     </mat-error>
+                     <mat-error *ngIf="registerForm.get('phoneNumber').errors?.pattern">
+                        Invalid phone number
                      </mat-error>
                 </mat-form-field>
             </div>
@@ -116,6 +122,12 @@
                              <mat-error *ngIf="registerForm.get('percent10').errors?.required && registerForm.get('percent10').touched">
                                 Required 10th Percentage
                              </mat-error>
+                             <mat-error *ngIf="registerForm.get('mark10').errors?.pattern && registerForm.get('mark10').touched">
+                                Invalid 10th mark
+                             </mat-error>
+                             <mat-error *ngIf="registerForm.get('percent10').errors?.pattern && registerForm.get('percent10').touched">
+                                Invalid 10th Percentage
+                             </mat-error>
                         </td>
                     </tr>
                     <tr>
@@ -138,6 +150,12 @@
                              </mat-error>
                              <mat-error *ngIf="registerForm.get('percent12').errors?.required && registerForm.get('percent12').touched">
                                 Required 12th Percentage
+                             </mat-error>
+                             <mat-error *ngIf="registerForm.get('mark12').errors?.pattern && registerForm.get('mark12').touched">
+                                Invalid 10th mark
+                             </mat-error>
+                             <mat-error *ngIf="registerForm.get('percent12').errors?.pattern && registerForm.get('percent12').touched">
+                                Invalid 10th Percentage
                              </mat-error>
                         </td>
                     </tr>
@@ -162,6 +180,12 @@
                              <mat-error *ngIf="registerForm.get('percentug').errors?.required && registerForm.get('markug').touched">
                                 Required Percentage for Ug
                              </mat-error>
+                             <mat-error *ngIf="registerForm.get('markug').errors?.pattern  && registerForm.get('markug').touched">
+                                Invalid CGPA for Ug
+                             </mat-error>
+                             <mat-error *ngIf="registerForm.get('percentug').errors?.pattern && registerForm.get('markug').touched">
+                                Invalid Percentage for Ug
+                             </mat-error>
                         </td>
                     </tr>
                     <tr>
@@ -185,14 +209,20 @@
                              <mat-error *ngIf="registerForm.get('percentPg').errors?.required && registerForm.get('percentPg').touched">
                                 Required Percentage for PG
                              </mat-error>
+                             <mat-error *ngIf="registerForm.get('markPg').errors?.pattern && registerForm.get('markPg').touched">
+                                Invalid CGPA for PG
+                             </mat-error>
+                             <mat-error *ngIf="registerForm.get('percentPg').errors?.pattern && registerForm.get('percentPg').touched">
+                                Invalid Percentage for PG
+                             </mat-error>
                         </td>
                     </tr>
                 </table>
             </div>
             <div>
                 <mat-label>Extra Curricular Activities</mat-label>
-                <mat-form-field appearance="standard">
-                    <input matInput>
+                <mat-form-field appearance="standard" >
+                    <input matInput formControlName="extraCurriculam">
                 </mat-form-field>
             </div>
             <div>
@@ -202,18 +232,21 @@
                     <mat-error *ngIf="registerForm.get('adhaarNo').errors?.required">
                         Required adhaar No
                      </mat-error>
+                     <mat-error *ngIf="registerForm.get('adhaarNo').errors?.pattern">
+                        Invalid adhaar No
+                     </mat-error>
                 </mat-form-field>
             </div>
             <div>
                 <mat-label>Others</mat-label>
-                <mat-form-field appearance="standard">
-                    <input matInput>
+                <mat-form-field appearance="standard" >
+                    <input matInput formControlName="others">
                 </mat-form-field>
             </div>
         </form>
     </div>
     <div >
         <button type="button" mat-raised-button color="primary" (click)="submit()">SUBMIT</button>
-        <button type="button" mat-raised-button color="warn" >CANCEL</button>
+        <button type="button" mat-raised-button color="warn" (click)="back()">CANCEL</button>
     </div>
 </div>

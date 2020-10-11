@@ -1,0 +1,23 @@
+Apptitude answers:
+1.4.
+2.12.
+3.30.
+4.54.
+5.Cannot be determined.
+6.Brother.
+7.X.
+8.BEAK.
+9.4374.
+10.Word.
+
+Technical answers:
+1.int myList [] = {4, 3, 7}.
+2.native.
+3.interface.
+4.& operator.
+5.All of them let you define new data types.
+6.Representation of NULL pointer.
+7.stdio.h and stddef.h.
+8.All arguments of an overloaded function can be default.
+9.~.
+10.free();

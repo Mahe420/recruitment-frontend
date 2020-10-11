@@ -44,15 +44,19 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaterialElevationDirective } from './user/material-elevation.directive';
+import { CountdownModule } from 'ngx-countdown';
 @NgModule({
   declarations: [
     AppComponent,
     AptitudeComponent,
     TechappsComponent,
     InfoComponent,
-    RegisterComponent
+    RegisterComponent,
+    MaterialElevationDirective
   ],
   imports: [
+    CountdownModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,

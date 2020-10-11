@@ -1,0 +1,35 @@
+.mat-card {
+  margin: 5px 20px;
+  border-radius: 10px;
+  background-color: #e2f3f5;
+}
+
+.mat-display-1{
+    margin:30px;
+}
+h3 {
+  align-self: center;
+}
+span{
+  font-size: 25px;
+}
+.mat-radio-button {
+  margin: 3px 0 3px 3px;
+  flex: 2;
+}
+
+p {
+  font-size: large;
+  margin: 7px;
+}
+
+.main {
+    background: #00d2ff;
+    background: -webkit-linear-gradient(to top, #928DAB, #00d2ff);
+    background: linear-gradient(to top, #928DAB, #00d2ff);
+}
+
+.options {
+  display: flex;
+  width: 100%;
+}

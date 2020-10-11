@@ -1,0 +1,72 @@
+[
+      {
+            "question": "Find the greatest number that will divide 43, 91 and 183 so as to leave the same remainder in each case?",
+            "option1": "4",
+            "option2": "7",
+            "option3": "9",
+            "option4": "13"
+      },
+      {
+            "question": "3 pumps, working 8 hours a day, can empty a tank in 2 days. How many hours a day must 4 pumps work to empty the tank in 1 day?",
+            "option1": "9",
+            "option2": "10",
+            "option3": "11",
+            "option4": "12"
+      },
+      {
+            "question": "A man walked diagonally across a square lot. Approximately, what was the percent saved by not walking along the edges?",
+            "option1": "20",
+            "option2": "24",
+            "option3": "30",
+            "option4": "33"
+      },
+      {
+            "question": "10, 25, 45, 54, 60, 75, 80?",
+            "option1": "10",
+            "option2": "45",
+            "option3": "54",
+            "option4": "75"
+      }  ,
+      {
+            "question": "If A is the brother of B; B is the sister of C; and C is the father of D, how D is related to A?",
+            "option1": "Brother",
+            "option2": "Sister",
+            "option3": "Nephew",
+            "option4": "Cannot be determined"
+      },
+      {
+            "question": "Introducing a boy, a girl said, 'He is the son of the daughter of the father of my uncle.' How is the boy related to the girl?",
+            "option1": "Brother",
+            "option2": "Sister",
+            "option3": "Uncle",
+            "option4": "Son-in-Law"
+      },
+      {
+            "question": "A, P, R, X, S and Z are sitting in a row. S and Z are in the centre. A and P are at the ends. R is sitting to the left of A. Who is to the right of P?",
+            "option1": "A",
+            "option2": "X",
+            "option3": "S",
+            "option4": "Z"
+      },
+      {
+            "question": "CUP : LIP :: BIRD : ?",
+            "option1": "BUSH",
+            "option2": "GRASS",
+            "option3": "FOREST",
+            "option4": "BEAK"
+      },
+      {
+            "question": "In the series 2, 6, 18, 54, ...... what will be the 8th term ?",
+            "option1": "4370",
+            "option2": "4374",
+            "option3": "7443",
+            "option4": "7434"
+      },
+      {
+            "question": "A song always has ?",
+            "option1": "Word",
+            "option2": "Chorus",
+            "option3": "Musician",
+            "option4": "Tymbal"
+      }
+]

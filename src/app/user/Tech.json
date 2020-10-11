@@ -1,0 +1,72 @@
+[
+	{
+		"question": "Which will legally declare, construct, and initialize an array?",
+		"option1": "int [] myList = {'1', '2', '3'};",
+		"option2": "int [] myList = (5, 8, 2);",
+		"option3": "int myList [] [] = {4,9,7,0};",
+		"option4": "int myList [] = {4, 3, 7};"
+	},
+	{
+		"question": "Which is a reserved word in the Java programming language?",
+		"option1": "method",
+		"option2": "native",
+		"option3": "subclasses",
+		"option4": "array"
+	},
+	{
+		"question": "Which is a valid keyword in java?",
+		"option1": "interface",
+		"option2": "string",
+		"option3": "Float",
+		"option4": "unsigned"
+	},
+	{
+		"question": "Which bitwise operator is suitable for turning off a particular bit in a number?",
+		"option1": "&& operator",
+		"option2": "& operator",
+		"option3": "|| operator",
+		"option4": "! operator"
+	},
+	{
+		"question": "What is the similarity between a structure, union and enumeration?",
+		"option1": "All of them let you define new values",
+		"option2": "All of them let you define new data types",
+		"option3": "All of them let you define new pointers",
+		"option4": "All of them let you define new structures"
+	},
+	{
+		"question": "What is (void*)0?",
+		"option1": "Representation of NULL pointer",
+		"option2": "Representation of void pointer",
+		"option3": "Error",
+		"option4": "None of above"
+	},
+	{
+		"question": "In which header file is the NULL macro defined?",
+		"option1": "stdio.h",
+		"option2": "stddef.h",
+		"option3": "stdio.h and stddef.h",
+		"option4": "math.h"
+	},
+	{
+		"question": "Which of the following statement is correct?",
+		"option1": "Overloaded functions can have at most one default argument",
+		"option2": "An overloaded function cannot have default argument",
+		"option3": "All arguments of an overloaded function can be default",
+		"option4": "A function if overloaded more than once cannot have default argument"
+	},
+	{
+		"question": "Destructor has the same name as the constructor and it is preceded by ______ ?",
+		"option1": "!",
+		"option2": "?",
+		"option3": "~",
+		"option4": "$"
+	},
+	{
+		"question": "What function should be used to free the memory allocated by calloc() ?",
+		"option1": "dealloc();",
+		"option2": "malloc(variable_name, 0)",
+		"option3": "free();",
+		"option4": "memalloc(variable_name, 0)"
+	}
+]
