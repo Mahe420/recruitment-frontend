@@ -32,13 +32,16 @@ export class LoginComponent implements OnInit {
       }
       else {
         this.loginService.login(this.loginForm.value).subscribe(data => {
+         
           if (data == null) {
             this.router.navigateByUrl('/');
             console.log("errors");
           }
           else {
             this.statusService.getStatusByUser(data.user.id).subscribe(statusDetails => {
+              this.statusService.changeStatus(statusDetails);
               userData = statusDetails
+             
               if (userData.resumeStatus) {
                 if (!userData.appTaken) {
                   console.log("redirect to apps");
@@ -55,7 +58,7 @@ export class LoginComponent implements OnInit {
               }
             });
           }
-        })
+        });
       }
     }
   }

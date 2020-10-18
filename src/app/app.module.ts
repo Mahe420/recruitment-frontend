@@ -46,6 +46,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialElevationDirective } from './user/material-elevation.directive';
 import { CountdownModule } from 'ngx-countdown';
+import { LoginService } from './login/services/login.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +68,7 @@ import { CountdownModule } from 'ngx-countdown';
     ReactiveFormsModule
 
   ],
-  providers: [StatusService,MatDatepickerModule,
+  providers: [LoginService,StatusService,MatDatepickerModule,
     MatNativeDateModule],
   bootstrap: [AppComponent]
 })

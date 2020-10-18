@@ -16,9 +16,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     ReactiveFormsModule,
     FormsModule,
     FlexLayoutModule
-  ],
-  providers:[
-    LoginService
   ]
 })
 export class LoginModule { }
