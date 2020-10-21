@@ -1,3 +1,4 @@
 {
-    "javascript.implicitProjectConfig.experimentalDecorators": true
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "compile-hero.disable-compile-files-on-did-save-code": false
 }

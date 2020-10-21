@@ -1,1 +1,9 @@
-<p>admin works!</p>
+<mat-toolbar color="primary">
+<a mat-button [routerLink]="['resume']" routerLinkActive="active">Resumes</a>
+<a mat-button [routerLink]="['aptitude']" routerLinkActive="active">Aptitude Result</a>
+<a mat-button [routerLink]="['technical']" routerLinkActive="active">Technical Result</a> 
+<span fxFlex></span>
+
+<button mat-raised-button color="warn" [routerLink]="['/']" routerLinkActive="router-link-active">Sign Out</button>
+</mat-toolbar>
+<router-outlet></router-outlet>

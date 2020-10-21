@@ -1,0 +1,19 @@
+<div class="border">
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let app of appList;index as i">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    qwe
+                </mat-panel-title>
+                <mat-panel-description>
+                    asdasd
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>{{app|json}}</p>
+            <mat-action-row>
+                <button mat-button color="warn">Rejected</button>
+                <button mat-button color="primary">Selected</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

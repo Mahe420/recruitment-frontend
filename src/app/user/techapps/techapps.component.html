@@ -4,7 +4,7 @@
             <countdown [config]="{leftTime: 30 ,format:'m : s'}" (event)="handleEvent($event)"></countdown>
         </span>
         <h3 class="mat-display-1">TECHNICAL TEST</h3>
-        <button mat-raised-button color="warn">SUBMIT</button>
+        <button mat-raised-button color="warn" (click)="submit()">SUBMIT</button>
     </div>
     <form [formGroup]="technicalForm">
         <div *ngFor="let item of list;index as i">

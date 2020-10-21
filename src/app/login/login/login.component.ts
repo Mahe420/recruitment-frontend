@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     this.loginForm.markAllAsTouched();
     if (this.loginForm.status === 'VALID') {
       if (this.loginForm.value.username === 'admin' && this.loginForm.value.password === 'admin') {
-        this.router.navigateByUrl('/admin');
+        this.router.navigateByUrl('/admin/resume');
         console.log('redirect to admin');
       }
       else {
