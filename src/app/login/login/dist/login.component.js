@@ -10,8 +10,9 @@ exports.LoginComponent = void 0;
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(fb, statusService, loginService, router) {
+    function LoginComponent(fb, snackBar, statusService, loginService, router) {
         this.fb = fb;
+        this.snackBar = snackBar;
         this.statusService = statusService;
         this.loginService = loginService;
         this.router = router;
@@ -30,13 +31,13 @@ var LoginComponent = /** @class */ (function () {
         if (this.loginForm.status === 'VALID') {
             if (this.loginForm.value.username === 'admin' && this.loginForm.value.password === 'admin') {
                 this.router.navigateByUrl('/admin/resume');
-                console.log('redirect to admin');
             }
             else {
                 this.loginService.login(this.loginForm.value).subscribe(function (data) {
                     if (data == null) {
-                        _this.router.navigateByUrl('/');
-                        console.log("errors");
+                        _this.snackBar.open('Invalid password or username', 'X', {
+                            duration: 1000
+                        });
                     }
                     else {
                         _this.statusService.getStatusByUser(data.user.id).subscribe(function (statusDetails) {

@@ -1,18 +1,30 @@
 <div class="border">
     <mat-accordion>
-        <mat-expansion-panel *ngFor="let app of appList;index as i">
+        <mat-expansion-panel *ngFor="let app of appList">
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                    qwe
+                    {{app.userStatus.user.userName}}
                 </mat-panel-title>
-                <mat-panel-description>
-                    asdasd
+                <mat-panel-description *ngIf="app.userStatus.appsStatus">
+                   <span style="color: green;">SELECTED</span>
                 </mat-panel-description>
             </mat-expansion-panel-header>
-            <p>{{app|json}}</p>
-            <mat-action-row>
-                <button mat-button color="warn">Rejected</button>
-                <button mat-button color="primary">Selected</button>
+            <div fxLayout="column" fxLayoutGap="5px">
+                
+                <div>1) {{appJsons[0].question}}<br>A) {{app.answer1}}</div>
+                <div>2) {{appJsons[1].question}}<br>A) {{app.answer2}}</div>
+                <div>3) {{appJsons[2].question}}<br>A) {{app.answer3}}</div>
+                <div>4) {{appJsons[3].question}}<br>A) {{app.answer4}}</div>
+                <div>5) {{appJsons[4].question}}<br>A) {{app.answer5}}</div>
+                <div>6) {{appJsons[5].question}}<br>A) {{app.answer6}}</div>
+                <div>7) {{appJsons[6].question}}<br>A) {{app.answer7}}</div>
+                <div>8) {{appJsons[7].question}}<br>A) {{app.answer8}}</div>
+                <div>9) {{appJsons[8].question}}<br>A) {{app.answer9}}</div>
+                <div>10) {{appJsons[9].question}}<br>A) {{app.answer10}}</div>
+            </div>
+            <mat-action-row *ngIf="!app.userStatus.rejected && !app.userStatus.appsStatus ">
+                <button mat-button color="warn" (click)="reject(app)">Rejected</button>
+                <button mat-button color="primary"(click)="select(app)">Selected</button>
             </mat-action-row>
         </mat-expansion-panel>
     </mat-accordion>

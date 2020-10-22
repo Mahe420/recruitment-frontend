@@ -11,7 +11,7 @@ var core_1 = require("@angular/core");
 var environment_1 = require("src/environments/environment");
 var APPS_API = '/apps';
 var TECHAPPS_API = '/techapps';
-var USER_API = '/user';
+var USER_STATUS_API = '/status';
 var AdminService = /** @class */ (function () {
     function AdminService(httpClient) {
         this.httpClient = httpClient;
@@ -23,7 +23,7 @@ var AdminService = /** @class */ (function () {
         return this.httpClient.get(environment_1.environment.BASE_URL + TECHAPPS_API);
     };
     AdminService.prototype.getAllUsers = function () {
-        return this.httpClient.get(environment_1.environment.BASE_URL + USER_API);
+        return this.httpClient.get(environment_1.environment.BASE_URL + USER_STATUS_API);
     };
     AdminService.prototype.deleteApps = function (id) {
         return this.httpClient["delete"](environment_1.environment.BASE_URL + APPS_API + '/' + id);

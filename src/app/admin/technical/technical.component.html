@@ -1,18 +1,30 @@
 <div class="border">
     <mat-accordion>
-        <mat-expansion-panel *ngFor="let tech of techList;index as i">
+        <mat-expansion-panel *ngFor="let tech of techList">
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                    qwe
+                    {{tech.userStatus.user.userName}}
                 </mat-panel-title>
-                <mat-panel-description>
-                    asdasd
+                <mat-panel-description *ngIf="tech.userStatus.techAppsStatus">
+                   <span style="color: green;">SELECTED</span>
                 </mat-panel-description>
             </mat-expansion-panel-header>
-            <p>{{tech|json}}</p>
-            <mat-action-row>
-                <button mat-button color="warn">Rejected</button>
-                <button mat-button color="primary">Selected</button>
+            <div fxLayout="column" fxLayoutGap="5px">
+                
+                <div>1) {{techJsons[0].question}}<br>A) {{tech.answer1}}</div>
+                <div>2) {{techJsons[1].question}}<br>A) {{tech.answer2}}</div>
+                <div>3) {{techJsons[2].question}}<br>A) {{tech.answer3}}</div>
+                <div>4) {{techJsons[3].question}}<br>A) {{tech.answer4}}</div>
+                <div>5) {{techJsons[4].question}}<br>A) {{tech.answer5}}</div>
+                <div>6) {{techJsons[5].question}}<br>A) {{tech.answer6}}</div>
+                <div>7) {{techJsons[6].question}}<br>A) {{tech.answer7}}</div>
+                <div>8) {{techJsons[7].question}}<br>A) {{tech.answer8}}</div>
+                <div>9) {{techJsons[8].question}}<br>A) {{tech.answer9}}</div>
+                <div>10) {{techJsons[9].question}}<br>A) {{tech.answer10}}</div>
+            </div>
+            <mat-action-row *ngIf="!tech.userStatus.rejected && !tech.userStatus.techAppsStatus ">
+                <button mat-button color="warn" (click)="reject(tech)">Rejected</button>
+                <button mat-button color="primary"(click)="select(tech)">Selected</button>
             </mat-action-row>
         </mat-expansion-panel>
     </mat-accordion>

@@ -9,9 +9,10 @@ import { AptitudeComponent } from './aptitude/aptitude.component';
 import { ResumeComponent } from './resume/resume.component';
 import { TechnicalComponent } from './technical/technical.component';
 import{AdminService} from './services/admin.service';
+import { ResumeModalComponent } from './resume-modal/resume-modal.component';
 
 @NgModule({
-  declarations: [AdminComponent, AptitudeComponent, ResumeComponent, TechnicalComponent],
+  declarations: [AdminComponent, AptitudeComponent, ResumeComponent, TechnicalComponent, ResumeModalComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -20,6 +21,7 @@ import{AdminService} from './services/admin.service';
     FormsModule,
     FlexLayoutModule
   ],
+  entryComponents:[ResumeModalComponent],
   providers:[AdminService]
 })
 export class AdminModule { }

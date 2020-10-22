@@ -18,12 +18,13 @@ var aptitude_component_1 = require("./aptitude/aptitude.component");
 var resume_component_1 = require("./resume/resume.component");
 var technical_component_1 = require("./technical/technical.component");
 var admin_service_1 = require("./services/admin.service");
+var resume_modal_component_1 = require("./resume-modal/resume-modal.component");
 var AdminModule = /** @class */ (function () {
     function AdminModule() {
     }
     AdminModule = __decorate([
         core_1.NgModule({
-            declarations: [admin_component_1.AdminComponent, aptitude_component_1.AptitudeComponent, resume_component_1.ResumeComponent, technical_component_1.TechnicalComponent],
+            declarations: [admin_component_1.AdminComponent, aptitude_component_1.AptitudeComponent, resume_component_1.ResumeComponent, technical_component_1.TechnicalComponent, resume_modal_component_1.ResumeModalComponent],
             imports: [
                 common_1.CommonModule,
                 admin_routing_module_1.AdminRoutingModule,
@@ -32,6 +33,7 @@ var AdminModule = /** @class */ (function () {
                 forms_1.FormsModule,
                 flex_layout_1.FlexLayoutModule
             ],
+            entryComponents: [resume_modal_component_1.ResumeModalComponent],
             providers: [admin_service_1.AdminService]
         })
     ], AdminModule);

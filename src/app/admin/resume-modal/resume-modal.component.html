@@ -1,0 +1,100 @@
+<h1 mat-dialog-title>{{user.userName}} {{user.lastName}}</h1>
+<div fxLayout="column" fxLayoutAlign="start" fxLayoutGap='10px' mat-dialog-content>
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap='10px'>
+        <div>
+            <mat-label>Date of birth: </mat-label>{{user.dob}}
+        </div>
+        <div>
+            <mat-label>Gender: </mat-label>{{user.gender}}
+        </div>
+        <div></div>
+    </div>
+    <div>
+        <mat-label>Email: </mat-label>{{user.email}}
+    </div>
+    <div>
+        <mat-label>Phone: </mat-label>{{user.phoneNumber}}
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap='10px'>
+        <div>
+            <mat-label>District: </mat-label>{{user.district}}
+        </div>
+        <div>
+            <mat-label>State: </mat-label>{{user.state}}
+        </div>
+        <div></div>
+    </div>
+    <table>
+        <tr>
+            <th></th>
+            <th>
+                <h3>Total Marks</h3>
+            </th>
+            <th>
+                <h3>Percentage</h3>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <mat-label>10th</mat-label>
+            </td>
+            <td>
+                {{user.mark10}}
+            </td>
+            <td>
+                {{user.percent10}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-label>12th</mat-label>
+            </td>
+            <td>
+                {{user.mark12}}
+            </td>
+            <td>
+                {{user.percent12}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-label>UG</mat-label>
+            </td>
+            <td>
+                {{user.markug}}
+            </td>
+            <td>
+                {{user.percentug}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-label>PG</mat-label>
+            </td>
+            <td>
+                {{user.markPg}}
+            </td>
+            <td>
+                {{user.percentPg}}
+            </td>
+        </tr>
+    </table>
+    <div>
+        <mat-label>Extra Curriculam: </mat-label>{{user.extraCurriculam}}
+    </div>
+    <div>
+        <mat-label>AdhaarNo: </mat-label>{{user.adhaarNo}}
+    </div>
+    <div>
+        <mat-label>Others: </mat-label>{{user.others}}
+    </div>
+</div>
+<div mat-dialog-actions>
+    <div *ngIf="data.rejected">
+        <h3 style="color:red">REJECTED</h3>
+    </div>
+    <div *ngIf="!data.rejected && !data.resumeStatus">
+        <button mat-raised-button color="warn" (click)="close(false)">Rejected</button>
+        <button mat-raised-button color="primary" (click)="close(true)">Selected</button>
+    </div>
+</div>
