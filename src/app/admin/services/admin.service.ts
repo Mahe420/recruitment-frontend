@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 const APPS_API = '/apps';
 const TECHAPPS_API = '/techapps';
 const USER_STATUS_API = '/status';
+const EMAIL_API='/email';
 @Injectable({
   providedIn: 'root'
 })
@@ -27,5 +28,19 @@ export class AdminService {
   deleteTechApps(id) {
     return this.httpClient.delete(environment.BASE_URL + TECHAPPS_API + '/' + id);
   }
+
+  rejectEmail(email){
+    return this.httpClient.post(environment.BASE_URL+EMAIL_API+'/reject',email);
+  }
+
+  successEmail(email){
+    return this.httpClient.post(environment.BASE_URL+EMAIL_API+'/success',email);
+  }
+
+  selectEmail(data){
+    return this.httpClient.post(environment.BASE_URL+EMAIL_API+'/select',data);
+  }
+
+
 
 }

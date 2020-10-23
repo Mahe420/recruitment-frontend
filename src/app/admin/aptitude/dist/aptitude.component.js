@@ -40,6 +40,11 @@ var AptitudeComponent = /** @class */ (function () {
         var _this = this;
         var userStatus = resume.userStatus;
         userStatus = __assign(__assign({}, userStatus), { appsStatus: true });
+        var data = {
+            id: userStatus.user.id,
+            email: userStatus.user.email
+        };
+        this.adminService.selectEmail(data).subscribe(function (data) { });
         this.statusService.updateStatus(userStatus).subscribe(function (data) {
             sweetalert2_1["default"].fire('Submitted', 'E-mail will be sent to the user', 'success').then(function (result) {
                 return _this.load();
@@ -50,8 +55,9 @@ var AptitudeComponent = /** @class */ (function () {
         var _this = this;
         var userStatus = resume.userStatus;
         userStatus = __assign(__assign({}, userStatus), { rejected: true });
-        this.adminService.deleteApps(resume.id).subscribe(function (data) { });
+        this.adminService.rejectEmail(userStatus.user.email).subscribe(function (ele) { });
         this.statusService.updateStatus(userStatus).subscribe(function (data) {
+            _this.adminService.deleteApps(resume.id).subscribe(function (data) { });
             sweetalert2_1["default"].fire('Submitted', 'E-mail will be sent to the user', 'success').then(function (result) {
                 _this.load();
             });

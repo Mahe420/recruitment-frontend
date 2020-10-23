@@ -30,7 +30,7 @@ select(resume) {
     ...userStatus,
     techAppsStatus: true
   }
-
+  this.adminService.successEmail(resume.userStatus.user.email).subscribe(ele=>{});
   this.statusService.updateStatus(userStatus).subscribe(data => {
     Swal.fire('Submitted', 'E-mail will be sent to the user', 'success').then(result =>
       this.load());
@@ -43,9 +43,9 @@ reject(resume) {
     rejected: true
   }
   
-
-    this.adminService.deleteTechApps(resume.id).subscribe(data=>{});
+  this.adminService.rejectEmail(userStatus.user.email).subscribe(ele=>{});
     this.statusService.updateStatus(userStatus).subscribe(data=>{
+      this.adminService.deleteTechApps(resume.id).subscribe(data=>{});
       Swal.fire('Submitted', 'E-mail will be sent to the user', 'success').then(result=>{
         this.load();
       });

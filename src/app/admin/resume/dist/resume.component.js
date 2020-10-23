@@ -51,6 +51,11 @@ var ResumeComponent = /** @class */ (function () {
     ResumeComponent.prototype.select = function (resume) {
         var _this = this;
         resume = __assign(__assign({}, resume), { resumeStatus: true });
+        var data = {
+            id: resume.user.id,
+            email: resume.user.email
+        };
+        this.adminService.selectEmail(data).subscribe(function (data) { });
         this.statusService.updateStatus(resume).subscribe(function (data) {
             console.log(data);
             sweetalert2_1["default"].fire('Submitted', 'E-mail will be sent to the user', 'success').then(function (result) {
@@ -61,6 +66,7 @@ var ResumeComponent = /** @class */ (function () {
     ResumeComponent.prototype.reject = function (resume) {
         var _this = this;
         resume = __assign(__assign({}, resume), { rejected: true });
+        this.adminService.rejectEmail(resume.user.email).subscribe(function (ele) { });
         this.statusService.updateStatus(resume).subscribe(function (data) {
             sweetalert2_1["default"].fire('Submitted', 'E-mail will be sent to the user', 'success').then(function (result) {
                 return _this.load();

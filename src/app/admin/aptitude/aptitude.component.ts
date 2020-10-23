@@ -31,6 +31,11 @@ export class AptitudeComponent implements OnInit {
       appsStatus: true
     }
 
+    let data ={
+      id:userStatus.user.id,
+      email:userStatus.user.email
+    }
+    this.adminService.selectEmail(data).subscribe(data=>{});
     this.statusService.updateStatus(userStatus).subscribe(data => {
       Swal.fire('Submitted', 'E-mail will be sent to the user', 'success').then(result =>
         this.load());
@@ -43,12 +48,15 @@ export class AptitudeComponent implements OnInit {
       rejected: true
     }
     
-  
+    this.adminService.rejectEmail(userStatus.user.email).subscribe(ele=>{});
+    
+    this.statusService.updateStatus(userStatus).subscribe(data=>{
       this.adminService.deleteApps(resume.id).subscribe(data=>{});
-      this.statusService.updateStatus(userStatus).subscribe(data=>{
-        Swal.fire('Submitted', 'E-mail will be sent to the user', 'success').then(result=>{
-          this.load();
-        });
+      Swal.fire('Submitted', 'E-mail will be sent to the user', 'success').then(result=>{
+        this.load();
       });
+    });  
+   
+      
     }
 }

@@ -40,7 +40,11 @@ export class ResumeComponent implements OnInit {
       ...resume,
       resumeStatus: true
     }
-
+    let data ={
+      id:resume.user.id,
+      email:resume.user.email
+    }
+    this.adminService.selectEmail(data).subscribe(data=>{});
      this.statusService.updateStatus(resume).subscribe(data=>{
        console.log(data);
       Swal.fire('Submitted','E-mail will be sent to the user','success').then(result=>
@@ -53,7 +57,7 @@ export class ResumeComponent implements OnInit {
       ...resume,
       rejected: true
     }
-
+    this.adminService.rejectEmail(resume.user.email).subscribe(ele=>{});
     this.statusService.updateStatus(resume).subscribe(data=>{
       Swal.fire('Submitted','E-mail will be sent to the user','success').then(result=>
         this.load());

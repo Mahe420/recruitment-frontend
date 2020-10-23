@@ -40,6 +40,7 @@ var TechnicalComponent = /** @class */ (function () {
         var _this = this;
         var userStatus = resume.userStatus;
         userStatus = __assign(__assign({}, userStatus), { techAppsStatus: true });
+        this.adminService.successEmail(resume.userStatus.user.email).subscribe(function (ele) { });
         this.statusService.updateStatus(userStatus).subscribe(function (data) {
             sweetalert2_1["default"].fire('Submitted', 'E-mail will be sent to the user', 'success').then(function (result) {
                 return _this.load();
@@ -50,8 +51,9 @@ var TechnicalComponent = /** @class */ (function () {
         var _this = this;
         var userStatus = resume.userStatus;
         userStatus = __assign(__assign({}, userStatus), { rejected: true });
-        this.adminService.deleteTechApps(resume.id).subscribe(function (data) { });
+        this.adminService.rejectEmail(userStatus.user.email).subscribe(function (ele) { });
         this.statusService.updateStatus(userStatus).subscribe(function (data) {
+            _this.adminService.deleteTechApps(resume.id).subscribe(function (data) { });
             sweetalert2_1["default"].fire('Submitted', 'E-mail will be sent to the user', 'success').then(function (result) {
                 _this.load();
             });

@@ -12,6 +12,7 @@ var environment_1 = require("src/environments/environment");
 var APPS_API = '/apps';
 var TECHAPPS_API = '/techapps';
 var USER_STATUS_API = '/status';
+var EMAIL_API = '/email';
 var AdminService = /** @class */ (function () {
     function AdminService(httpClient) {
         this.httpClient = httpClient;
@@ -30,6 +31,15 @@ var AdminService = /** @class */ (function () {
     };
     AdminService.prototype.deleteTechApps = function (id) {
         return this.httpClient["delete"](environment_1.environment.BASE_URL + TECHAPPS_API + '/' + id);
+    };
+    AdminService.prototype.rejectEmail = function (email) {
+        return this.httpClient.post(environment_1.environment.BASE_URL + EMAIL_API + '/reject', email);
+    };
+    AdminService.prototype.successEmail = function (email) {
+        return this.httpClient.post(environment_1.environment.BASE_URL + EMAIL_API + '/success', email);
+    };
+    AdminService.prototype.selectEmail = function (data) {
+        return this.httpClient.post(environment_1.environment.BASE_URL + EMAIL_API + '/select', data);
     };
     AdminService = __decorate([
         core_1.Injectable({
